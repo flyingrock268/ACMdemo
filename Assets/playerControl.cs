@@ -27,6 +27,7 @@ public class playerControl : MonoBehaviour
     {
 
         //rb2d.velocity = new Vector2(Input.GetAxis("Horizontal"),0) * speed;
+        rb2d.AddForce(new Vector2(Input.GetAxis("Horizontal"), 0) * speed * Time.deltaTime / .02f);
 
         animator.SetBool("walking", !(rb2d.velocity.x > -.5f && rb2d.velocity.x < .5f));
 
@@ -52,7 +53,7 @@ public class playerControl : MonoBehaviour
 
         }
 
-        rb2d.AddForce(new Vector2(Input.GetAxis("Horizontal"), 0) * speed * Time.deltaTime / .02f);
+       
 
     }
 
